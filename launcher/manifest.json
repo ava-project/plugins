@@ -8,6 +8,6 @@
       "name": "start",
       "phonetic": "START",
       "exec": "launcher.py"
-    },
+    }
   ]
 }

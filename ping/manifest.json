@@ -8,6 +8,6 @@
       "name": "ping",
       "phonetic": "PING",
       "exec": "ping.py"
-    },
+    }
   ]
 }

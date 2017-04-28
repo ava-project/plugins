@@ -8,6 +8,6 @@
       "name": "weather",
       "phonetic": "WEATHER",
       "exec": "weather.py"
-    },
+    }
   ]
 }

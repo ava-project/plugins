@@ -8,6 +8,6 @@
       "name": "time",
       "phonetic": "TIME",
       "exec": "time.py"
-    },
+    }
   ]
 }
