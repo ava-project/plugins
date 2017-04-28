@@ -1,0 +1,13 @@
+{
+  "name":"launcher",
+  "description": "Plugin to launch a program on the computer",
+  "version": "0.0.1",
+  "author": "dodo",
+  "commands": [
+    {
+      "name": "start",
+      "phonetic": "START",
+      "exec": "launcher.py"
+    },
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name":"time",
+  "description": "Plugin to know what time is it",
+  "version": "0.0.1",
+  "author": "dodo",
+  "commands": [
+    {
+      "name": "time",
+      "phonetic": "TIME",
+      "exec": "time.py"
+    },
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name":"weather",
+  "description": "Plugin to get the weather of the city",
+  "version": "0.0.1",
+  "author": "dodo",
+  "commands": [
+    {
+      "name": "weather",
+      "phonetic": "WEATHER",
+      "exec": "weather.py"
+    },
+  ]
+}
