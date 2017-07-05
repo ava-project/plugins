@@ -11,6 +11,5 @@
       "description": "command to log to my own server"
     }
   ],
-  "tags": ["ssh", "python"],
-  "build": false
+  "tags": ["ssh", "python"]
 }
