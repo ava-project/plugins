@@ -3,11 +3,12 @@
   "description": "Say Hello",
   "version": "0.0.1",
   "author": "tommy",
+  "source": "hello_world.cpp",
   "commands": [
     {
       "name": "hello",
       "phonetic": "Hello",
-      "exec": "hello_world.cpp"
+      "description": "Say Hello"
     }
   ],
   "tags": ["test", "hello", "world"],
