@@ -1,11 +1,8 @@
 #include <Python.h>
-#include <iostream>
+#include <string>
 
-void *say_hello(char *what) {
-  std::cout << "Hello, ";
-  std::cout << what;
-  std::cout << " :)\n";
-  return what;
+std::string say_hello(char *what) {
+  return std::string("Hello, ") + std::string(what) + std::string(" !");
 }
 
 static PyObject *hello(PyObject *self, PyObject *args)
@@ -16,7 +13,7 @@ static PyObject *hello(PyObject *self, PyObject *args)
     return NULL;
   }
 
-  return Py_BuildValue("O", say_hello(input));
+  return Py_BuildValue("s", say_hello(input));
 }
 
 static PyMethodDef HelloMethods[] = {
@@ -24,16 +21,16 @@ static PyMethodDef HelloMethods[] = {
  { NULL, NULL, 0, NULL }
 };
 
-static struct PyModuleDef hello_world =
+static struct PyModuleDef say =
 {
     PyModuleDef_HEAD_INIT,
-    "hello_world",
+    "say",
     "",
     -1,
     HelloMethods
 };
 
-PyMODINIT_FUNC PyInit_hello_world(void)
+PyMODINIT_FUNC PyInit_say(void)
 {
-    return PyModule_Create(&hello_world);
+    return PyModule_Create(&say);
 }

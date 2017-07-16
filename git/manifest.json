@@ -1,0 +1,23 @@
+{
+  "name":"git",
+  "description": "Git plugin for AVA",
+  "version": "0.0.1",
+  "author": "tommy",
+  "source": "git.py",
+  "commands": [
+    {
+      "name": "version",
+      "phonetic": "V ERH SI ON",
+      "description": "Display the git version"
+    },
+    {
+      "name": "log",
+      "phonetic": "L UHG",
+      "description": "Display the log of a git repository"
+    }
+  ],
+  "options": {
+    "branch": "master"
+  },
+  "tags": ["git", "python"]
+}

@@ -1,0 +1,10 @@
+### 2017-07-16 20:50:37 ###
+Traceback (most recent call last):
+  File "ava\plugins\process\python_plugin_process.py", line 57, in <module>
+    wait_for_command(plugin_name)
+  File "ava\plugins\process\python_plugin_process.py", line 34, in wait_for_command
+    command = input('')
+  File "c:\python36\lib\encodings\cp1252.py", line 22, in decode
+    def decode(self, input, final=False):
+KeyboardInterrupt
+### 2017-07-16 20:51:21 ###

@@ -1,9 +1,9 @@
 {
-  "name":"hello_world",
+  "name":"say",
   "description": "Say Hello",
   "version": "0.0.1",
   "author": "tommy",
-  "source": "hello_world.cpp",
+  "source": "say.cpp",
   "commands": [
     {
       "name": "hello",
@@ -11,6 +11,6 @@
       "description": "Say Hello"
     }
   ],
-  "tags": ["test", "hello", "world"],
+  "tags": ["test", "hello", "c++"],
   "build": true
 }

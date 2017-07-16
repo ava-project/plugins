@@ -1,4 +1,4 @@
-# Hello world
+# Say
 
 An example of a plugin written in C++.
 
