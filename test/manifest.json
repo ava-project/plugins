@@ -1,0 +1,15 @@
+{
+  "name":"test",
+  "description": "test plugin",
+  "version": "0.0.1",
+  "author": "tommy",
+  "source": "test.py",
+  "commands": [
+    {
+      "name": "test",
+      "phonetic": "T EST",
+      "description": "Testing purpose"
+    }
+  ],
+  "tags": ["test", "python"]
+}
