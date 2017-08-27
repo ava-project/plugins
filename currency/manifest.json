@@ -1,0 +1,15 @@
+{
+  "name":"currency",
+  "description": "Currency converter plugin",
+  "version": "0.0.1",
+  "author": "Jamais",
+  "source": "currency.py",
+  "commands": [
+    {
+      "name": "convert",
+      "phonetic": "K ON V E R T",
+      "description": "Returns converted value from a currency to another"
+    },
+  ],
+  "tags": ["currency", "converter", "python"]
+}

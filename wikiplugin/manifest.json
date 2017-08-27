@@ -1,0 +1,15 @@
+{
+  "name":"wikiplugin",
+  "description": "Get a short answer to a question through wikipedia",
+  "version": "0.0.1",
+  "author": "Jamais",
+  "source": "wikiplugin.py",
+  "commands": [
+    {
+      "name": "ask",
+      "phonetic": "A S K",
+      "description": "returns a short resume on a question"
+    },
+  ],
+  "tags": ["wikipedia", "ask", "python"]
+}
