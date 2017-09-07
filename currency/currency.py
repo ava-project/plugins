@@ -1,4 +1,4 @@
-from avasdk.plugins import PythonModel
+from avasdk.plugins.model import PythonModel
 import requests
 
 class CurrencyConverter(PythonModel):

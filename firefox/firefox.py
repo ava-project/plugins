@@ -1,4 +1,4 @@
-from avasdk.plugins.python_model import PythonModel
+from avasdk.plugins.model import PythonModel
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
