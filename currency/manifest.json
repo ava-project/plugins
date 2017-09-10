@@ -7,9 +7,9 @@
   "commands": [
     {
       "name": "convert",
-      "phonetic": "K ON V E R T",
       "description": "Returns converted value from a currency to another"
     }
   ],
-  "tags": ["currency", "converter", "python"]
+  "tags": ["currency", "converter", "python"],
+  "build": true
 }

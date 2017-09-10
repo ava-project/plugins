@@ -7,12 +7,10 @@
   "commands": [
     {
       "name": "version",
-      "phonetic": "V ERH SI ON",
       "description": "Display the git version"
     },
     {
       "name": "log",
-      "phonetic": "L UHG",
       "description": "Display the log of a git repository"
     }
   ],

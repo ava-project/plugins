@@ -7,7 +7,6 @@
   "commands": [
     {
       "name": "hello",
-      "phonetic": "Hello",
       "description": "Say Hello"
     }
   ],

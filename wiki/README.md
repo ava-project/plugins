@@ -1,4 +1,4 @@
-# Currency
+# Wiki
 
 answers  question about what or who is something/ someone
 

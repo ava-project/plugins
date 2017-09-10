@@ -7,7 +7,6 @@
   "commands": [
     {
       "name": "test",
-      "phonetic": "T EST",
       "description": "Testing purpose"
     }
   ],

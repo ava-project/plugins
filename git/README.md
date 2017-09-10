@@ -1,11 +1,10 @@
 # Git
 
-Display the git version or the log of the current repository.
-
+debug.
 
 ### commands
 
 Name | Action
 ------------ | -------------
-log() | Returns the log of the current repository
-version() | Returns the current git version
+log() | perform 'git log'
+version() | perform 'git version'

@@ -7,12 +7,10 @@
   "commands": [
     {
       "name": "time",
-      "phonetic": "T I ME",
       "description": "Returns the current time"
     },
     {
       "name": "date",
-      "phonetic": "D ATE",
       "description": "Returns the current date"
     }
   ],

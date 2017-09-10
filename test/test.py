@@ -16,7 +16,7 @@ class test(PythonModel):
     def crash(self, command):
         """
         """
-        return toto
+        return toto()
 
     def oneshot(self, command):
         print('### ONESHOT ###')
