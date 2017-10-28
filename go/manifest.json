@@ -1,0 +1,15 @@
+{
+  "name":"go",
+  "description": "Go plugin for AVA",
+  "version": "0.0.1",
+  "author": "tommy",
+  "source": "go.go",
+  "commands": [
+    {
+      "name": "hello",
+      "description": "say hello from go"
+    }
+  ],
+  "tags": ["go", "hello"],
+	"build" :true
+}
