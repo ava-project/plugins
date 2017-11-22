@@ -4,8 +4,10 @@ from selenium.webdriver.common.keys import Keys
 import time
 import re
 
-ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+### DEMO VERSION ####
 
+ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+browser = webdriver.Firefox()
 class firefox(PythonModel):
     """docstring for FirefoxPlugin.
 
@@ -21,9 +23,9 @@ class firefox(PythonModel):
     def __init__(self, name="Firefox"):
         super(firefox, self).__init__(name)
         self.set_commands_list({**PythonModel._commands, **{\
-        "open" : self.web_search, \
-        "type" : self.make_query, \
-        "click" : self.click_element, \
+        "open" : self.open, \
+        "type" : self.type, \
+        "click" : self.click, \
         "maximize" : self.maximize_current_window, \
         "exit" : self.exit, \
         "select" : self.select \
@@ -31,7 +33,6 @@ class firefox(PythonModel):
         # "paste" : self.paste
 
         }})
-        self._browser = webdriver.Firefox();
         self._current_element = None;
 
     def list_commands(self, option="") :
@@ -67,37 +68,38 @@ class firefox(PythonModel):
 
         element = None
         try :
-            element = self._browser.find_element_by_xpath("//*[contains(translate(text(), '"+ALPHABET+"', '"+ALPHABET.lower()+"'), '"+text.lower()+"')]")
+            element = browser.find_element_by_xpath("//*[contains(translate(text(), '"+ALPHABET+"', '"+ALPHABET.lower()+"'), '"+text.lower()+"')]")
+            print(element)
         except BaseException as e :
             print("Unable to locate element with text '"+text+"' . Error : " + str(e))
         return element
 
 
     def maximize_current_window(self, decoy='') :
-        self._browser.maximize_window()
+        browser.maximize_window()
 
     def exit(self, decoy='') :
-        self._browser.quit()
+        browser.quit()
 
     def select(self, target_name) :
         pass
-    def web_search(self, web_search_query) :
 
+    def open(self, query) :
         try :
-            self._browser.get(self.__reformat_web_query(web_search_query))
+            # self._browser.get(self.__reformat_web_query(web_search_query))
+            browser.get(self.__reformat_web_query(self, query))
+            print("opened {0}".format(query))
 
         except BaseException as e :
             print("Invalid web query : " + str(e))
 
-
-
-    def make_query(self, query) :
+    def type(self, query) :
         input_element = None;
 
         try :
-            input_element = self._browser.find_elements_by_tag_name("input")
+            input_element = browser.find_elements_by_tag_name("input")
             for e in input_element :
-                if self.__validate_user_query_field(e.get_attribute('name')) is True :
+                if self.__validate_user_query_field(self, e.get_attribute('name')) is True :
                     e.clear()
                     e.send_keys(query)
                     e.submit()
@@ -105,29 +107,44 @@ class firefox(PythonModel):
 
         except BaseException as e :
             print("Invalid search query : " + str(e))
+        print("ok")
 
-    def click_element(self, element_name) :
+    def click(self, element_name) :
+        try :
+            element = self.__locate_element_by_text(self, element_name)
+            if element is not None :
+                try :
+                    element.click()
+                except BaseException as e:
+                    print("Invalid action : " + str(e))
+        except BaseException as e:
+            print("problem locating element " + str(e))
+        print("done")
 
-        element = self.__locate_element_by_text(element_name)
-        if element is not None :
-            element.click()
+    def select(self, element_name) :
+        try :
+            element = self.__locate_element_by_text(self, element_name)
+            if element is not None :
+                element.select()
+        except BaseException as e:
+            print("Invalid action : " + str(e))
+        print("done")
 
-    def select_element(self, element_name) :
-
-        element = self.__locate_element_by_text(element_name)
-        if element is not None :
-            element.select()
-
-
-
-# f = FirefoxPlugin("firefox")
-# f.get_commands()["list"]()
-# i = input("addresse :\n")
-# f.web_search(i)
-# time.sleep(10)
-# i = input("votre recherche :\n")
-# f.make_query(i)
-# time.sleep(10)
-# i = input("votre choix :\n")
-# f.click_element(i)
-# time.sleep(10)
+    def play(self, command) :
+        w = command.split(' ')
+        query = ""
+        target = ''
+        f = 0;
+        for word in w :
+            if (word == 'in' or word == 'on' or word == 'with') :
+                f = 1;
+            elif f is 1 :
+                    target = self.__reformat_web_query(word);
+                    break
+            else :
+                query += word + ' ';
+        print("query = " + query + " webquery = " + target);
+        # self.open(target)
+        # while i < 5 :
+        #     try : self.type(query)
+        #     catch (std::)
